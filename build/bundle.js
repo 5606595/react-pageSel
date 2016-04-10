@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0e55b96268a1afd6274d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "ff0ffb4c0d833d7db05e"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -26557,17 +26557,23 @@
 	    confirmHandle: function confirmHandle() {
 	        var input = this.refs.input.getDOMNode();
 	        var value = input.value;
+	        var curPage = this.state.curPage;
 	        var pageCount = this.state.pageCount;
 	        if (value != parseInt(value)) {
+	            input.value = curPage;
 	            return;
 	        }
 	        if (value < 0 || value > pageCount) {
+	            input.value = curPage;
 	            return;
 	        }
 	        this.setState({
 	            curPage: parseInt(value)
 	        });
 	        this.handlePage(value);
+	        if (value < pageCount) {
+	            input.value++;
+	        }
 	    },
 	    keyHandle: function keyHandle(event) {
 	        if (event.keyCode === 13) {
@@ -26741,7 +26747,7 @@
 
 
 	// module
-	exports.push([module.id, "html,\nbody {\n  margin: 0px;\n  padding: 0px;\n}\n* {\n  box-sizing: border-box;\n}\nbody {\n  width: 1280px;\n  margin: auto;\n}\n@font-face {\n  font-family: \"iconfont\";\n  src: url(" + __webpack_require__(231) + ");\n  /* IE9*/\n  src: url(" + __webpack_require__(231) + "#iefix) format('embedded-opentype'),  url(" + __webpack_require__(232) + ") format('woff'),  url(" + __webpack_require__(233) + ") format('truetype'),  url(" + __webpack_require__(234) + "#iconfont) format('svg');\n  /* iOS 4.1- */\n}\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.pageSel {\n  width: 650px;\n  margin: 40px auto 300px auto;\n}\n.pageSel ul {\n  width: 100%;\n  padding: 0px;\n  list-style: none;\n}\n.pageSel ul li {\n  display: inline-block;\n  width: 35px;\n  height: 37px;\n  text-align: center;\n  line-height: 37px;\n  margin-left: -1px;\n  position: relative;\n}\n.pageSel ul li.active {\n  margin-left: -1px;\n  background: #ff5300;\n  color: white;\n  font-size: 14px;\n}\n.pageSel ul li.active span {\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  border: 1px solid #ff5300;\n}\n.pageSel ul li.first {\n  z-index: 200;\n}\n.pageSel ul li a {\n  width: 100%;\n  height: 100%;\n  display: inline-block;\n  font-size: 14px;\n  border: 1px solid #EAEAEA;\n  transition: all .1s linear;\n  color: black;\n  text-decoration: none;\n  position: relative;\n}\n.pageSel ul li:hover a {\n  border: 1px solid #ff5300;\n  color: #ff5300;\n}\n.pageSel ul li:hover + li a {\n  border-left: 1px solid #ff5300;\n}\n.pageSel ul li.last-page {\n  margin-right: 20px;\n  width: 70px;\n}\n.pageSel ul li.last-page a {\n  position: relative;\n  text-indent: 8px;\n}\n.pageSel ul li.last-page:hover a {\n  border: 1px solid #ff5300;\n}\n.pageSel ul li.last-page:hover + li a {\n  border-left: 1px solid #EAEAEA;\n}\n.pageSel ul li.last-page .icon-last:before {\n  position: absolute;\n  font-size: 14px;\n  font-weight: bold;\n  left: -4px;\n  content: \"\\E607\";\n}\n.pageSel ul li.disabled a {\n  color: #BBB;\n  font-weight: bold;\n}\n.pageSel ul li.disabled:hover a {\n  border: 1px solid #EAEAEA;\n}\n.pageSel ul li.next-page {\n  width: 70px;\n  margin-left: 20px;\n}\n.pageSel ul li.next-page a {\n  position: relative;\n  text-align: left;\n  text-indent: 8px;\n}\n.pageSel ul li.next-page .icon-next:before {\n  position: absolute;\n  font-size: 14px;\n  right: 4px;\n  font-weight: bold;\n  content: \"\\E608\";\n}\n.pageSel ul li.not {\n  width: 24px;\n}\n.pageSel ul li.not:hover + li a {\n  border-left: 1px solid #EAEAEA;\n}\n.pageSel ul li.not + li.next-page {\n  margin-left: 0px;\n}\n.pageSel ul .explain {\n  font-size: 13px;\n  color: #AAA;\n  line-height: 37px;\n  margin: 0px 8px;\n}\n.pageSel ul .num {\n  margin: 0px 2px;\n  vertical-align: -1px;\n}\n.pageSel ul input {\n  width: 30px;\n  border: 1px solid #F0F0F0;\n}\n.pageSel ul .confirm {\n  padding: 3px 8px;\n  border-radius: 0px;\n  border: 1px solid #EAEAEA;\n  background: none;\n}\n.pageSel ul .confirm:hover {\n  border: 1px solid #ff5300;\n  color: #ff5300;\n  cursor: pointer;\n}\n", ""]);
+	exports.push([module.id, "html,\nbody {\n  margin: 0px;\n  padding: 0px;\n}\n* {\n  box-sizing: border-box;\n}\nbody {\n  width: 1280px;\n  margin: auto;\n}\n@font-face {\n  font-family: \"iconfont\";\n  src: url(" + __webpack_require__(231) + ");\n  /* IE9*/\n  src: url(" + __webpack_require__(231) + "#iefix) format('embedded-opentype'),  url(" + __webpack_require__(232) + ") format('woff'),  url(" + __webpack_require__(233) + ") format('truetype'),  url(" + __webpack_require__(234) + "#iconfont) format('svg');\n  /* iOS 4.1- */\n}\n.iconfont {\n  font-family: \"iconfont\" !important;\n  font-size: 16px;\n  font-style: normal;\n  -webkit-font-smoothing: antialiased;\n  -webkit-text-stroke-width: 0.2px;\n  -moz-osx-font-smoothing: grayscale;\n}\n.pageSel {\n  width: 650px;\n  margin: 40px auto 300px auto;\n}\n.pageSel ul {\n  width: 100%;\n  padding: 0px;\n  list-style: none;\n}\n.pageSel ul li {\n  display: inline-block;\n  width: 35px;\n  height: 37px;\n  text-align: center;\n  line-height: 37px;\n  margin-left: -1px;\n  position: relative;\n}\n.pageSel ul li.active {\n  margin-left: -1px;\n  background: #ff5300;\n  color: white;\n  font-size: 14px;\n}\n.pageSel ul li.active span {\n  display: inline-block;\n  width: 100%;\n  height: 100%;\n  border: 1px solid #ff5300;\n}\n.pageSel ul li.first {\n  z-index: 200;\n}\n.pageSel ul li a {\n  width: 100%;\n  height: 100%;\n  display: inline-block;\n  font-size: 14px;\n  border: 1px solid #EAEAEA;\n  transition: all .1s linear;\n  color: black;\n  text-decoration: none;\n  position: relative;\n}\n.pageSel ul li:hover a {\n  border: 1px solid #ff5300;\n  color: #ff5300;\n}\n.pageSel ul li:hover + li a {\n  border-left: 1px solid #ff5300;\n}\n.pageSel ul li.last-page {\n  margin-right: 20px;\n  width: 70px;\n}\n.pageSel ul li.last-page a {\n  position: relative;\n  text-indent: 8px;\n}\n.pageSel ul li.last-page:hover a {\n  border: 1px solid #ff5300;\n}\n.pageSel ul li.last-page:hover + li a {\n  border-left: 1px solid #EAEAEA;\n}\n.pageSel ul li.last-page .icon-last:before {\n  position: absolute;\n  font-size: 14px;\n  font-weight: bold;\n  left: -4px;\n  content: \"\\E607\";\n}\n.pageSel ul li.disabled a {\n  color: #BBB;\n  font-weight: bold;\n}\n.pageSel ul li.disabled:hover a {\n  border: 1px solid #EAEAEA;\n}\n.pageSel ul li.next-page {\n  width: 70px;\n  margin-left: 20px;\n}\n.pageSel ul li.next-page a {\n  position: relative;\n  text-align: left;\n  text-indent: 8px;\n}\n.pageSel ul li.next-page .icon-next:before {\n  position: absolute;\n  font-size: 14px;\n  right: 4px;\n  font-weight: bold;\n  content: \"\\E608\";\n}\n.pageSel ul li.not {\n  width: 24px;\n}\n.pageSel ul li.not:hover + li a {\n  border-left: 1px solid #EAEAEA;\n}\n.pageSel ul li.not + li.next-page {\n  margin-left: 0px;\n}\n.pageSel ul .explain {\n  font-size: 13px;\n  color: #AAA;\n  line-height: 37px;\n  margin: 0px 8px;\n}\n.pageSel ul .num {\n  margin: 0px 2px;\n  vertical-align: -1px;\n}\n.pageSel ul input {\n  width: 30px;\n  outline: none;\n  border: 1px solid #F0F0F0;\n}\n.pageSel ul .confirm {\n  padding: 3px 8px;\n  border-radius: 0px;\n  outline: none;\n  border: 1px solid #EAEAEA;\n  background: none;\n}\n.pageSel ul .confirm:hover {\n  border: 1px solid #ff5300;\n  color: #ff5300;\n  cursor: pointer;\n}\n", ""]);
 
 	// exports
 

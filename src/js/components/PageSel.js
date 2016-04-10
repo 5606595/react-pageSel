@@ -78,17 +78,23 @@ let PageSel = React.createClass({
     confirmHandle() {
         let input = this.refs.input.getDOMNode();
         let value = input.value;
+        let curPage = this.state.curPage;
         let pageCount = this.state.pageCount;
         if(value != parseInt(value)) {
+            input.value = curPage;
             return;
         }
         if(value < 0 || value > pageCount) {
+            input.value = curPage;
             return;
         }
         this.setState({
             curPage: parseInt(value)
         });
         this.handlePage(value);
+        if(value < pageCount) {
+            input.value++;
+        }
     },
     keyHandle(event) {
         if(event.keyCode === 13) {
