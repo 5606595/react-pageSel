@@ -1,0 +1,32 @@
+{
+  "name": "pagesel",
+  "version": "1.0.0",
+  "description": "react分页组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorten",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.5.1",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "css-loader": "^0.23.0",
+    "file-loader": "^0.8.5",
+    "image-webpack-loader": "^1.6.3",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "react": "^0.14.7",
+    "react-addons-css-transition-group": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-hot-loader": "^1.3.0",
+    "react-redux": "4.0.0",
+    "react-router": "^2.0.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
